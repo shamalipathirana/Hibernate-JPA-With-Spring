@@ -2,6 +2,7 @@ package com.example.springHibernate.model;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -11,11 +12,17 @@ public class Post {
 	
 	@Id
 	private Integer id;
+	
+	@Column(name="post_date")
 	private LocalDateTime postDate;
 	
 	@ManyToOne
 	private User user;
+	
+	//@Column(name="details")
 	private String details;
+	
+	
 	public Integer getId() {
 		return id;
 	}

@@ -1,5 +1,6 @@
 package com.example.springHibernate.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -9,11 +10,17 @@ public class User {
 	
 	@Id
 	private String id;
+	
+	@Column(name="first_name")
     private String firstname;
+	
+	@Column(name="last_name")
     private String lastname;
     
     @ManyToOne
     private Location location;
+    
+    @Column(name="email")
     private String email;
     
 	public String getId() {
